@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Indian Travel Planner</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Indian Travel Planner</h1>
+    <nav>
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('plan_trip') }}">Plan Your Trip</a>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Discover India's Hidden Gems</h2>
+      <p>Get personalized travel recommendations based on real-time weather and traffic data!</p>
+      <a href="{{ url_for('plan_trip') }}" class="btn">Plan Your Trip</a>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Indian Travel Planner</p>
+  </footer>
+</body>
+</html>

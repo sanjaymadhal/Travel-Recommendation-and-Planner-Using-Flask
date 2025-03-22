@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Recommendations - Indian Travel Planner</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Your Travel Recommendations</h1>
+    <nav>
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('plan_trip') }}">Plan Your Trip</a>
+    </nav>
+  </header>
+  <main>
+    <section>
+      {% if recommendations %}
+        <ul class="recommendations">
+          {% for rec in recommendations %}
+          <li>
+            <h2>{{ rec.city }} (Rating: {{ rec.rating }})</h2>
+            <p>{{ rec.description }}</p>
+            <p><strong>Best Time to Visit:</strong> {{ rec.best_time }}</p>
+            <p><strong>Weather:</strong> {{ rec.weather.description }}, {{ rec.weather.temp }}°C, Humidity: {{ rec.weather.humidity }}%</p>
+            <p><strong>Estimated Traffic Duration:</strong> {{ rec.traffic }} seconds</p>
+          </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No recommendations available. Please try again later.</p>
+      {% endif %}
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Indian Travel Planner</p>
+  </footer>
+</body>
+</html>

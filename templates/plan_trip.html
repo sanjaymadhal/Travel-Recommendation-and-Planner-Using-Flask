@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Plan Your Trip - Indian Travel Planner</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Plan Your Trip</h1>
+    <nav>
+      <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{ url_for('plan_trip') }}">Plan Your Trip</a>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <form method="POST" action="{{ url_for('plan_trip') }}">
+        <label for="preferences">Tell us your travel preferences:</label>
+        <input type="text" id="preferences" name="preferences" placeholder="e.g., beach, hill station, heritage" required>
+        <button type="submit" class="btn">Get Recommendations</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Indian Travel Planner</p>
+  </footer>
+</body>
+</html>
